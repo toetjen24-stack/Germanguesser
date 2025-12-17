@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GermanGuesser</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="start-screen">
+    <div id="header-container">
+        <div id="header-start">GermanGuesser</div>
+        <div id="by-text">by Tyrese</div>
+    </div>
+
+    <button id="start-btn" class="game-btn small-btn">Start</button>
+
+    <div id="difficulty-buttons">
+        <button id="easy-btn" class="game-btn">Leicht</button>
+        <button id="hard-btn" class="game-btn">Schwer</button>
+    </div>
+</div>
+
+<div id="game-screen" style="display:none;">
+    <div id="header">GermanGuesser</div>
+    <div id="mode-indicator"></div>
+
+    <div id="points">Punkte: 0</div>
+    <div id="rounds">Runde: 1/15</div>
+    <div id="timer">Zeit: 30</div>
+
+    <div id="game-container">
+        <div id="image-container">
+            <div id="streetview" style="width: 100%; height: 100%; border-radius: 15px;"></div>
+        </div>
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <button id="guess-btn">Ort bestätigen</button>
+</div>
+
+<div id="end-screen" style="display:none;">
+    <div id="header-end">Danke fürs Spielen!</div>
+    <p id="end-text">Du hast alle 15 Runden abgeschlossen.</p>
+    <button id="restart-btn">Zurück zur Startseite</button>
+</div>
+
+<div id="result-popup">
+    <div id="popup-box">
+        <h2>Runden-Ergebnis</h2>
+        <p id="popup-text"></p>
+        <button id="popup-close">Weiter</button>
+    </div>
+</div>
+
+<!-- Hintergrundmusik -->
+<audio id="bg-music" src="background.mp3" loop></audio>
+
+<!-- Popup-Sound -->
+<audio id="popup-sound" src="popup.mp3"></audio>
+
+<!-- Google Maps API für Street View -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcJh44_y3lMEnr5XUxYBRv0SLWPcTGKgQ"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
